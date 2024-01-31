@@ -3,6 +3,10 @@ from .forms import PersonalInfoForm, CareerApplicationInfoForm,ExperienceInforma
       ExperienceInformationTwoForm, ExperienceInformationThreeForm,TrainingInformationForm,ContactInformationForm,\
         Reference1Form,Reference2Form
 
+
+def HomePage(request):
+    return render(request, 'base.html')
+
 def personal_info_form(request):
     if request.method == 'POST':
         form = PersonalInfoForm(request.POST, request.FILES)
@@ -21,7 +25,7 @@ def career_application_info_form(request):
         if form.is_valid():
             form.save()
             # Redirect to a success page or do something else
-            return redirect('field/success/')
+            return redirect('/success/')
     else:
         form = CareerApplicationInfoForm()
 
@@ -34,7 +38,7 @@ def experience_info_one_form(request):
         if form.is_valid():
             form.save()
             # Redirect to a success page or do something else
-            return redirect('field/success/')
+            return redirect('/success/')
     else:
         form = ExperienceInformationOneForm()
 
@@ -47,7 +51,7 @@ def experience_info_two_form(request):
         if form.is_valid():
             form.save()
             # Redirect to a success page or do something else
-            return redirect('field/success/')
+            return redirect('/success/')
     else:
         form = ExperienceInformationTwoForm()
 
@@ -60,7 +64,7 @@ def experience_info_three_form(request):
         if form.is_valid():
             form.save()
             # Redirect to a success page or do something else
-            return redirect('field/success/')
+            return redirect('/success/')
     else:
         form = ExperienceInformationThreeForm()
 
@@ -73,7 +77,7 @@ def training_info_form(request):
         if form.is_valid():
             form.save()
             # Redirect to a success page or do something else
-            return redirect('field/success/')
+            return redirect('/success/')
     else:
         form = TrainingInformationForm()
 
@@ -86,7 +90,7 @@ def contact_info_form(request):
         if form.is_valid():
             form.save()
             # Redirect to a success page or do something else
-            return redirect('field/success/')
+            return redirect('/success/')
     else:
         form = ContactInformationForm()
 
@@ -100,7 +104,7 @@ def reference1_form(request):
         if form.is_valid():
             form.save()
             # Redirect to a success page or do something else
-            return redirect('field/success/')
+            return redirect('/success/')
     else:
         form = Reference1Form()
 
@@ -113,8 +117,12 @@ def reference2_form(request):
         if form.is_valid():
             form.save()
             # Redirect to a success page or do something else
-            return redirect('field/success/')
+            return redirect('/success/')
     else:
         form = Reference2Form()
 
     return render(request, 'field/reference2_form.html', {'form': form})
+
+
+def success_page(request):
+    return render(request, 'field/success.html')

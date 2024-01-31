@@ -1,6 +1,12 @@
+{% extends "base.html" %}
+
 <!-- career_application_info_form.html -->
+
+
+{% block content %} 
 <form method="post" action="{% url 'career_application_info_form' %}">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Submit</button>
 </form>
+{% endblock content %}
