@@ -1,0 +1,6 @@
+<!-- experience_info_one_form.html -->
+<form method="post" action="{% url 'experience_info_two_form' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>

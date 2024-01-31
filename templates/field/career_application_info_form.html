@@ -1,0 +1,6 @@
+<!-- career_application_info_form.html -->
+<form method="post" action="{% url 'career_application_info_form' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>
