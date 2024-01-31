@@ -5,7 +5,7 @@ from .forms import PersonalInfoForm, CareerApplicationInfoForm,ExperienceInforma
 
 
 def HomePage(request):
-    return render(request, 'base.html')
+    return render(request, 'field/base.html')
 
 def personal_info_form(request):
     if request.method == 'POST':
